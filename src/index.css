@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root[theme = "light"] {
+      --color-bg-1: 29 29 29;
+      --color-bg-2: 23 23 23;
+  --color-content-1: 189 186 177;
+      --color-content-2: 189 186 177;
+  --color-text-highlight-1:110 10 15;
+  }
+  :root[theme = "dark"] {
+      --color-bg-1: 189 186 177;
+      --color-bg-2: 189 186 177;
+  --color-content-1: 29 29 29;
+      --color-content-2: 23 23 23;
+  --color-text-highlight-1:155 255 255;
+
+  }
+}
