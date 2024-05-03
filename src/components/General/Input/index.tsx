@@ -36,7 +36,7 @@ const Input = ({
   };
 
   return (
-    <div className="relative dark:text-[#ac9a8a]">
+    <div className="relative text-textprim">
       {leadingIcon && (
         <div className="absolute inset-y-0 left-0 flex items-center pl-3">
           {leadingIcon}

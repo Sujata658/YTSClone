@@ -3,7 +3,7 @@ import { footerLinks, footerLinks2 } from "../Constants/const"
 export const Footer = () => {
   return (
     <>
-    <div className="flex justify-center items-center py-8 borde">
+    <div className="flex justify-center items-center py-8 border">
       <div>
 
         <div className="flex gap-2">

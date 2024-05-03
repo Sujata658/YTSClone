@@ -7,6 +7,7 @@ export const getSimilarMovies = async (id: string) => {
             limit: 4,
           },
     });
+    console.log('Got getSimilarMovies')
     return response.data.data.movies;
   } catch (error) {
     console.error(error);

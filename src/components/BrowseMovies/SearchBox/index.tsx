@@ -1,21 +1,37 @@
 import React, { useState } from 'react';
 import Button from '../../General/Button';
 import Input from '../../General/Input';
-import { Dropdown } from '../../General/Dropdown';
+import { dropdownlist } from '../../Constants/const';
 
 interface SearchBoxProps {
-  onSearch: (query: string) => void; // Callback function to handle search
+  onSearch: (searchProps: SearchProps) => void;
+  submit?: (searchProps: SearchProps) => void;
 }
 
 export const SearchBox: React.FC<SearchBoxProps> = ({ onSearch }) => {
-  const [query, setQuery] = useState<string>('');
+  const [searchProps, setSearchProps] = useState<SearchProps>({
+    query: '',
+    quality: '',
+    genre: '',
+    rating: '',
+    year: '',
+    language: '',
+    orderby: ''
+  });
+
 
   const handleChange = (value: string) => {
-    setQuery(value);
+    setSearchProps(prevState => ({ ...prevState, query: value }));
+  };
+
+  const handleDropdownChange = (fieldName: string, value: string) => {
+    console.log(fieldName, value)
+    setSearchProps(prevState => ({ ...prevState, [fieldName.toLowerCase()]: value }));
+    console.log(searchProps)
   };
 
   const handleSearchClick = () => {
-    onSearch(query);
+    onSearch(searchProps);
   };
 
   return (
@@ -24,16 +40,34 @@ export const SearchBox: React.FC<SearchBoxProps> = ({ onSearch }) => {
       <div className="grid grid-cols-8 gap-5">
         <div className="col-span-7">
           <Input
-            placeholder={""}
+            placeholder=""
             border="border-none"
             backgroundColor="bg-[#282828]"
             onChange={handleChange}
           />
         </div>
-        <Button background={"bg-[#5da93c]"} content={"Search"} onClick={handleSearchClick} />
+        <Button background="bg-[#5da93c]" content="Search" onClick={handleSearchClick} />
       </div>
       <div>
-        <Dropdown/>
+        <div className='dark:text-[#282828] grid grid-cols-6 gap-8'>
+          {dropdownlist.map((item, index) => (
+            <div key={index} className='mt-4'>
+              <div className='dark:text-[#919191] text-sm font-bold'>
+                {item.name + ':'}
+              </div>
+              <select
+                name={item.name}
+                id={item.id}
+                className='p-2 rounded-md text-sm bg-[#282828] text-[#919191] w-full'
+                onChange={(e) => handleDropdownChange(item.name, e.target.value)}
+              >
+                {item.options.map((option, idx) => (
+                  <option key={idx} value={option}>{option}</option>
+                ))}
+              </select>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import { searchMovies } from '../../../apis/Movies/searchMovies';
 import Pagination from '../../General/Pagination';
 
 interface YIFYMoviesProps {
-  searchQuery?: string;
+  searchQuery?: SearchProps;
 }
 
 export const YIFYMovies = ({ searchQuery }:YIFYMoviesProps) => {
@@ -19,7 +19,7 @@ export const YIFYMovies = ({ searchQuery }:YIFYMoviesProps) => {
   const [currentPage, setCurrentPage] = useState<number>(1);
 
   useEffect(() => {
-    if (searchQuery !== undefined && searchQuery !== '') {
+    if (searchQuery !== undefined && searchQuery.query !== '') {
       searchMovies(searchQuery).then((movieData) => {
         setMoviesData(movieData)
       });
@@ -35,7 +35,8 @@ export const YIFYMovies = ({ searchQuery }:YIFYMoviesProps) => {
   };
 
   return (
-    <div className='py-6'>
+    moviesData.movie_count ===0? <div className='flex items-center justify-center h-[32vh] w-full'>Sorry Movie Not Found</div>
+    :<div className='py-6'>
       <div className='text-center text-[#5da93c] text-xl flex justify-center'>
         <p>YIFY Movies</p>
         {currentPage > 1 && <p> - page {currentPage}</p>}

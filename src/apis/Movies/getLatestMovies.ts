@@ -1,6 +1,8 @@
 import { axiosInstance } from "../../config/axios";
 
 export const getLatestMovies = () => {
+
+  console.log('Got getLatestMovies')
   return axiosInstance
     .get("/list_movies.json", {
       params: {

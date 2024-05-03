@@ -19,7 +19,7 @@ export const Movies = ({ title = '', urltitle = '', url='', movies, gridcolcss }
           <div className="font-bold text-lg">
             {title}
           </div>
-          <div className="text-sm font-bold text-[#ac9a8a]">
+          <div className="text-sm font-bold text-textprim">
             <a href={url}>{urltitle}</a>
           </div>
         </div>}

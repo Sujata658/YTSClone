@@ -4,11 +4,22 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: "class",
   theme: {
     extend: {
-      fontFamily: { 'arimo': ["Arimo", 'sans-serif'] }
+      colors: {
+        bkgprim: "rgb(var(--color-bg-primary) / <alpha-value>)",
+        bkgsec: "rgb(var(--color-bg-secondary) / <alpha-value>)",
+        bkgtert: "rgb(var(--color-bg-tertiary) / <alpha-value>)",
 
+        textprim: "rgb(var(--color-text-primary) / <alpha-value>)",
+        textsec: "rgb(var(--color-text-secondary) / <alpha-value>)",
+        texttert: "rgb(var(--color-text-tertiary) / <alpha-value>)",
+        
+        webthemeprim: "rgb(var(--color-webtheme-primary) / <alpha-value>)",
+
+        themeopp: "rgb(var(--color-theme-opposite) / <alpha-value>)"
+
+      },
     },
   },
   plugins: [],

@@ -4,18 +4,26 @@
 
 @layer base {
     :root[theme = "light"] {
-      --color-bg-1: 29 29 29;
-      --color-bg-2: 23 23 23;
-  --color-content-1: 189 186 177;
-      --color-content-2: 189 186 177;
-  --color-text-highlight-1:110 10 15;
+      --color-bg-primary: 252 215 198;
+      --color-bg-secondary: 183 189 185;
+      --color-bg-tertiary: 255 255 255;
+
+      --color-text-primary:29 29 29;
+      --color-text-secondary:85 82 81;
+      --color-text-tertiary:  66 139 202;
+
+    --color-webtheme-primary: 106 192 69;
+
   }
   :root[theme = "dark"] {
-      --color-bg-1: 189 186 177;
-      --color-bg-2: 189 186 177;
-  --color-content-1: 29 29 29;
-      --color-content-2: 23 23 23;
-  --color-text-highlight-1:155 255 255;
+    --color-bg-primary: 29 29 29;
+      --color-bg-secondary: 23 23 23;
+      --color-bg-tertiary: 0 0 0;
 
+    --color-text-primary:255 255 255;
+    --color-text-secondary: 85 82 81;
+    --color-text-tertiary: 66 139 202;
+
+  --color-webtheme-primary: 106 192 69;
   }
 }

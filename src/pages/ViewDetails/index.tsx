@@ -42,7 +42,9 @@ export const ViewDetails: React.FC = () => {
       <FirstHalf bg={movieDetail?.background_image} medium_cover={movieDetail?.medium_cover_image} large={movieDetail?.large_cover_image} title={movieDetail?.title} year={movieDetail?.year} genres={movieDetail?.genres} uniqueQualities={uniqueQualities} like_count={movieDetail?.like_count} rating={movieDetail?.rating} similarmovies={similarmovies} />
       <Trailers yt={movieDetail?.yt_trailer_code} screenshots={[
         movieDetail?.medium_screenshot_image1,
-        movieDetail?.medium_screenshot_image2
+        movieDetail?.medium_screenshot_image2,
+        movieDetail?.medium_screenshot_image3,
+
       ]} />
       <PlotCast
         summary={movieDetail?.description_intro}
