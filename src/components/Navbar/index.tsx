@@ -33,7 +33,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="px-[5%] py-4 text-xs font-bold border-b border-textsec">
+      <div className="px-[5%] py-4 text-[12px] font-bold border-b border-textsec">
         <div className="flex justify-between items-center">
           <div>
             <a href="/">
@@ -83,9 +83,9 @@ export default function Navbar() {
               }
 
             </div>
-            <ul className="flex gap-5 justify-end items-center">
+            <ul className="flex gap-5 justify-end items-center ">
               {navLink.map((Link) => (
-                <li key={Link.id}>
+                <li key={Link.id} className={`hover:text-textprim font-bold ${Link.name === '4K'? 'text-webthemeprim': 'text-textsec'}`} >
                   <NavLink to={Link.link}>{Link.name}</NavLink>
                 </li>
               ))}

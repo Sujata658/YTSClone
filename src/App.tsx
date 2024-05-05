@@ -5,22 +5,26 @@ import { BrowseMovies } from './pages/BrowseMovies'
 import Navbar from './components/Navbar'
 import { Footer } from './components/Footer'
 import { ViewDetails } from './pages/ViewDetails'
+import FallbackUI from './components/FallBackUI'
+import ErrorBoundary from './components/ErrorBoundary'
+import { ComingSoon } from './components/ComingSoon'
 
 function App() {
-
   return (
-    <>
-      <div className='bg-bkgprim text-textprim'>
-    <Navbar/>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path='/browse-movies' element={<BrowseMovies/>} />
-        <Route path="/movies/:id" Component={ViewDetails} />
-      </Routes>
-    <Footer/>
-      </div>
-    </>
+    <div className='bg-bkgprim text-textprim h-full'>
+      <Navbar />
+      <ErrorBoundary fallbackUI={<FallbackUI />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path='/browse-movies' element={<BrowseMovies />} />
+          <Route path="/movies/:id" element={<ViewDetails />} />
+          <Route path="*" element={<ComingSoon />} />
+        </Routes>
+      </ErrorBoundary>
+      <Footer />
+    </div>
   )
 }
 
-export default App
+export default App;
+
