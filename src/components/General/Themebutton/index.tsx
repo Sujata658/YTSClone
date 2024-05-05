@@ -9,7 +9,7 @@ export const ThemeButton = () => {
     const storedTheme = localStorage.getItem('theme');
     if (storedTheme) {
       setTheme(storedTheme);
-      document.documentElement.setAttribute('theme', storedTheme); // corrected syntax
+      document.documentElement.setAttribute('theme', storedTheme); 
       document.documentElement.classList.toggle('dark', storedTheme === 'dark');
     }
   }, []);
@@ -24,7 +24,7 @@ export const ThemeButton = () => {
 
   return (
     <div>
-      <button className="flex items-center gap-2 border-2 rounded-[25px] px-2 py-2" onClick={handleTheme} style={{ backgroundColor: theme === 'light' ? 'white' : 'black' }}>
+      <button className="flex items-center gap-2 border-2 rounded-[25px] px-2 py-2" onClick={handleTheme} style={{ backgroundColor: 'bkgprim' }}>
         {theme === 'dark' ? <FontAwesomeIcon icon={faSun} /> : <FontAwesomeIcon icon={faMoon} />}
       </button>
     </div>

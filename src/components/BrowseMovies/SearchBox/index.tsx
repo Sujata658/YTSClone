@@ -36,29 +36,29 @@ export const SearchBox: React.FC<SearchBoxProps> = ({ onSearch }) => {
 
   return (
     <div className="px-40">
-      <div className="text-[#919191] font-bold">Search Term:</div>
+      <div className="text-textsec text-2xl font-bold">Search Term:</div>
       <div className="grid grid-cols-8 gap-5">
         <div className="col-span-7">
           <Input
             placeholder=""
             border="border-none"
-            backgroundColor="bg-[#282828]"
+            backgroundColor="bg-bkgprim"
             onChange={handleChange}
           />
         </div>
-        <Button background="bg-[#5da93c]" content="Search" onClick={handleSearchClick} />
+        <Button background="bg-webthemeprim" textColor='text-textprim' content="Search" onClick={handleSearchClick} />
       </div>
       <div>
-        <div className='dark:text-[#282828] grid grid-cols-6 gap-8'>
+        <div className='grid grid-cols-6 gap-8'>
           {dropdownlist.map((item, index) => (
             <div key={index} className='mt-4'>
-              <div className='dark:text-[#919191] text-sm font-bold'>
+              <div className='text-textsec text-sm font-bold'>
                 {item.name + ':'}
               </div>
               <select
                 name={item.name}
                 id={item.id}
-                className='p-2 rounded-md text-sm bg-[#282828] text-[#919191] w-full'
+                className='p-2 rounded-md text-sm bg-bkgprim text-textsec w-full'
                 onChange={(e) => handleDropdownChange(item.name, e.target.value)}
               >
                 {item.options.map((option, idx) => (

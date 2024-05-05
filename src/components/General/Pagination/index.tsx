@@ -5,9 +5,10 @@ interface PaginationProps {
   totalPages: number;
   primaryColor: string;
   onPageChange: (page: number) => void;
+  hoverColor?: string;
 }
 
-const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, primaryColor, onPageChange }) => {
+const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, primaryColor, onPageChange, hoverColor }) => {
   const maxPagesToShow = 8;
 
   const calculatePageRange = () => {
@@ -30,7 +31,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, primar
 
   const pagesToShow = calculatePageRange();
 
-  const hoverColor = `hover:bg-${primaryColor}`;
+ 
 
   return (
     <nav className="flex justify-center my-4">
@@ -38,9 +39,9 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, primar
         <li>
           <button
             onClick={() => onPageChange(1)}
-            className={`px-3 py-2 mx-1 rounded-md border border-slate ${
-              currentPage === 1 ? 'hidden' : 'text-white'
-            } ${hoverColor} hover:text-black focus:outline-none focus:${primaryColor} focus:text-white`}
+            className={`px-3 py-2 mx-1 rounded-md border border-textsec ${
+              currentPage === 1 ? 'hidden' : 'text-textprim'
+            } ${hoverColor} hover:bg-webthemeprim  focus:text-textprim`}
             disabled={currentPage === 1}
           >
             {'<<'} First
@@ -50,9 +51,9 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, primar
         <li>
           <button
             onClick={() => onPageChange(currentPage - 1)}
-            className={`px-3 py-2 mx-1 rounded-md border border-slate ${
-              currentPage === 1 ? 'hidden' : 'text-white'
-            } ${hoverColor} focus:outline-none focus:${primaryColor} focus:text-white`}
+            className={`px-3 py-2 mx-1 rounded-md border border-textsec ${
+              currentPage === 1 ? 'hidden' : 'text-textprim'
+            } ${hoverColor} hover:bg-webthemeprim focus:text-textprim`}
             disabled={currentPage === 1}
           >
             Prev
@@ -63,9 +64,9 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, primar
           <li key={index}>
             <button
               onClick={() => onPageChange(page)}
-              className={`px-3 py-2 mx-1 rounded-md border border-slate ${
-                currentPage === page ? primaryColor : 'text-white'
-              } ${hoverColor} focus:outline-none focus:${primaryColor} focus:text-white`}
+              className={`px-3 py-2 mx-1 rounded-md border border-textsec ${
+                currentPage === page ? primaryColor : 'text-textprim'
+              } ${hoverColor} hover:bg-webthemeprim focus:text-textprim`}
             >
               {page}
             </button>
@@ -75,9 +76,9 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, primar
         <li>
           <button
             onClick={() => onPageChange(currentPage + 1)}
-            className={`px-3 py-2 mx-1 rounded-md border border-slate ${
-              currentPage === totalPages ? 'hidden' : 'text-white'
-            } ${hoverColor} hover:text-white focus:outline-none focus:${primaryColor} focus:text-white`}
+            className={`px-3 py-2 mx-1 rounded-md border border-textsec ${
+              currentPage === totalPages ? 'hidden' : 'text-textprim'
+            } ${hoverColor} hover:bg-webthemeprim focus:text-textprim`}
             disabled={currentPage === totalPages}
           >
             Next

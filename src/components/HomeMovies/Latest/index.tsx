@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Movie } from '../../../types/LatestMovies';
-import { Movies } from '../../MoviesList/Movies';
+import  Movies  from '../../MoviesList/Movies';
 import { getLatestMovies } from '../../../apis/Movies/getLatestMovies';
 
 export const Latest = () => {

@@ -1,4 +1,4 @@
-import { Movies } from "../../MoviesList/Movies"
+import  Movies from "../../MoviesList/Movies"
 import { Movie } from "../../../types/LatestMovies"
 import { useEffect, useState } from "react"
 import { getUpcomingMovies } from "../../../apis/Movies/getUpcomingMovies"

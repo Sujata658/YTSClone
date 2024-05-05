@@ -10,7 +10,7 @@ interface MoviesProps {
 
 }
 
-export const Movies = ({ title = '', urltitle = '', url='', movies, gridcolcss }: MoviesProps) => {
+const Movies = ({ title = '', urltitle = '', url='', movies, gridcolcss }: MoviesProps) => {
   return (
     <>
     <div className="my-16 mx-32">
@@ -34,3 +34,4 @@ export const Movies = ({ title = '', urltitle = '', url='', movies, gridcolcss }
 
   );
 };
+export default Movies

@@ -16,10 +16,14 @@ export default {
         texttert: "rgb(var(--color-text-tertiary) / <alpha-value>)",
         
         webthemeprim: "rgb(var(--color-webtheme-primary) / <alpha-value>)",
+        webthemesec: "rgb(var(--color-webtheme-secondary) / <alpha-value>)",
 
         themeopp: "rgb(var(--color-theme-opposite) / <alpha-value>)"
 
       },
+      fontFamily:{
+        'arimo': ["Arimo", 'sans-serif']
+      }
     },
   },
   plugins: [],

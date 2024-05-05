@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Movies } from '../../MoviesList/Movies';
+import Movies  from '../../MoviesList/Movies';
 import { Data } from '../../../types/LatestMovies';
 import { getMovies } from '../../../apis/Movies/getMovies';
 import { searchMovies } from '../../../apis/Movies/searchMovies';
@@ -37,22 +37,24 @@ export const YIFYMovies = ({ searchQuery }:YIFYMoviesProps) => {
   return (
     moviesData.movie_count ===0? <div className='flex items-center justify-center h-[32vh] w-full'>Sorry Movie Not Found</div>
     :<div className='py-6'>
-      <div className='text-center text-[#5da93c] text-xl flex justify-center'>
+      <div className='text-center text-webthemeprim text-xl flex justify-center'>
         <p>YIFY Movies</p>
         {currentPage > 1 && <p> - page {currentPage}</p>}
       </div>
       <Pagination
         currentPage={currentPage}
         totalPages={Math.ceil(moviesData.movie_count / 20)}
-        primaryColor={'bg-[#5da93c]'}
+        primaryColor={'bg-webthemeprim'}
         onPageChange={handlePageChange}
+        hoverColor='hover:hover-webthemeprim'
       />
       <Movies movies={moviesData.movies} gridcolcss='grid-cols-5' />
       <Pagination
         currentPage={currentPage}
         totalPages={Math.ceil(moviesData.movie_count / 20)}
-        primaryColor={'bg-[#5da93c]'}
+        primaryColor={'bg-webthemeprim'}
         onPageChange={handlePageChange}
+        hoverColor='hover:hover-webthemeprim'
       />
     </div>
   );
