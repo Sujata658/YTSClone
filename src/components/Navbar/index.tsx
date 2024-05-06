@@ -65,7 +65,10 @@ export default function Navbar() {
 
                         searchedMovies?.slice(0, 5).map((movie) => {
                           return <>
-                            <div className='flex gap-2 p-2'>
+                            
+                              <a href={`/movies/${movie.id}`}>
+                              <div className='flex gap-2 p-2'>
+
                               <img src={movie.small_cover_image} alt={movie.title} />
                               <div >
                                 <div className='font-bold'>
@@ -76,6 +79,7 @@ export default function Navbar() {
                                 </div>
                               </div>
                             </div>
+                              </a>
                           </>
                         })
                       }
