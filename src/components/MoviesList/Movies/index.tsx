@@ -21,7 +21,7 @@ const Movies = ({ title = '', urltitle = '', url='', movies, gridcolcss }: Movie
           </div>
           <div className="text-sm font-bold text-textprim">
             <a href={url}>{urltitle}</a>
-          </div>
+          </div>/
         </div>}
       
         <div className={`grid ${gridcolcss} gap-16`}>

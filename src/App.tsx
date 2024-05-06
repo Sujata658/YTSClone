@@ -13,7 +13,7 @@ function App() {
   return (
     <div className='bg-bkgprim text-textprim h-full'>
       <Navbar />
-      <ErrorBoundary fallbackUI={<FallbackUI />}>
+      <ErrorBoundary >
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path='/browse-movies' element={<BrowseMovies />} />

@@ -1,27 +1,42 @@
-import React, { useState } from 'react';
-import { ErrorBoundary as ReactErrorBoundary } from 'react-error-boundary';
+import { Component, ErrorInfo, ReactNode } from 'react';
+import FallbackUI from '../FallBackUI';
 
 interface ErrorBoundaryProps {
-  children: React.ReactNode;
-  fallbackUI: React.ReactNode;
+    children: ReactNode;
 }
 
-const ErrorBoundary: React.FC<ErrorBoundaryProps> = ({ children, fallbackUI }) => {
-  const [hasError, setHasError] = useState<boolean>(false);
+interface ErrorBoundaryState {
+    hasError: boolean;
+}
 
-  const handleOnError = () => {
-    setHasError(true);
-  };
+class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+    constructor(props: ErrorBoundaryProps) {
+        super(props);
+        this.state = { hasError: false };
+    }
 
-  if (hasError) {
-    return fallbackUI;
-  }
+    static getDerivedStateFromError(_: Error): ErrorBoundaryState {
+        return { hasError: true };
+    }
 
-  return (
-    <ReactErrorBoundary fallbackRender={() => fallbackUI} onError={handleOnError}>
-      {children}
-    </ReactErrorBoundary>
-  );
-};
+    componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
+        
+        console.error('ErrorBoundary caught an error:', error, errorInfo);
+    }
+
+    goBack = () => {
+        window.history.back();
+    };
+
+    render() {
+        if (this.state.hasError) {
+            return (
+                <FallbackUI/>
+            );
+        }
+
+        return this.props.children;
+    }
+}
 
 export default ErrorBoundary;
