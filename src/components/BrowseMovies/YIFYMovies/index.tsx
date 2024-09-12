@@ -48,7 +48,7 @@ export const YIFYMovies = ({ searchQuery }:YIFYMoviesProps) => {
         onPageChange={handlePageChange}
         hoverColor='hover:hover-webthemeprim'
       />
-      <Movies movies={moviesData.movies} gridcolcss='grid-cols-5' />
+      <Movies movies={moviesData.movies} gridcolcss='md:grid-cols-5' />
       <Pagination
         currentPage={currentPage}
         totalPages={Math.ceil(moviesData.movie_count / 20)}

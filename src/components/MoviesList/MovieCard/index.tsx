@@ -2,16 +2,17 @@ import React from 'react'
 import { Movie } from '../../../types/LatestMovies'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 export const MovieCard: React.FC<{ movie: Movie }> = ({ movie }) => {
   return (
     <div >
-      <a href={`/movies/${movie.id}`}>
+      <Link to={`/movies/${movie.id}`}>
         <div className='relative group rounded border-[6px] hover:border-webthemeprim '>
           <img
             src={movie.medium_cover_image ? movie.medium_cover_image : movie.large_cover_image}
             alt={movie.title}
-            className=' border-bkgprim group-hover:opacity-10 filter blur-0 transition-all duration-300 '
+            className='cover w-full min-h-[30vh] border-bkgprim group-hover:opacity-10 filter blur-0 transition-all duration-300 '
           />
           <div className='absolute top-1/2 left-1/2 grid gap-1 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group group-hover:opacity-100 filter  transition-all duration-300'>
             <div className='text-3xl text-center text-webthemeprim group-hover:opacity-100 filter  transition-all duration-300'>
@@ -43,7 +44,7 @@ export const MovieCard: React.FC<{ movie: Movie }> = ({ movie }) => {
           <p>{movie.year}</p>
 
         </div>
-      </a>
+      </Link>
 
     </div>
   );

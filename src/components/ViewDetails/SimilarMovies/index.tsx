@@ -1,5 +1,6 @@
 import React from 'react';
 import { Movie } from "../../../types/LatestMovies";
+import { Link } from 'react-router-dom';
 
 interface SimilarMoviesProps {
     movies?: Movie[]; 
@@ -19,9 +20,9 @@ export const SimilarMovies: React.FC<SimilarMoviesProps> = ({ movies }) => {
                             <li key={movie.id}>
                                 <div>
 
-                                <a href={`/movies/${movie.id}`}>
+                                <Link to={`/movies/${movie.id}`}>
                                     <img src={movie.medium_cover_image} alt="" className='rounded border-4 border-white hover:border-[#94e652]'/>
-                                </a>
+                                </Link>
                                 </div>
                             </li>
                             </>

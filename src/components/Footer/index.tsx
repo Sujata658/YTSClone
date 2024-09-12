@@ -10,16 +10,18 @@ export const Footer = () => {
           <div>
             YTS©2011 - 2024 
           </div>
-          <div className="flex gap-2 text-textsec text-sm font-bold ">
+          <div className="flex gap-2 text-textsec text-sm font-bold " >
           {
-            footerLinks.map((item)=>{
-              return <>
+            footerLinks.map((item, index)=>{
+              return              <div key={index}>
+
               <div>-</div>
               <div key={item.id} className="hover:text-textprim">
                 <a href={item.link}>{item.name}</a>
               </div>
+              </div>
               
-              </>
+              
             })
           }
           </div>
@@ -29,7 +31,7 @@ export const Footer = () => {
         <div className="flex justify-center gap-2 text-textsec text-sm font-bold ">
           {
             footerLinks2.map((item, index)=>{
-              return <>
+              return <div key={index}>
               {
                 index == 0? <div>
 
@@ -40,7 +42,7 @@ export const Footer = () => {
                 <a href={item.link}>{item.name}</a>
               </div>
               
-              </>
+              </div>
             })
           }
           </div>

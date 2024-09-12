@@ -13,7 +13,7 @@ interface MoviesProps {
 const Movies = ({ title = '', urltitle = '', url='', movies, gridcolcss }: MoviesProps) => {
   return (
     <>
-    <div className="my-16 mx-32">
+    <div className="my-16 mx-12 md:mx-32">
       {title === '' ? <div></div> :
         <div className="flex items-center justify-between mb-4">
           <div className="font-bold text-lg">
@@ -24,7 +24,7 @@ const Movies = ({ title = '', urltitle = '', url='', movies, gridcolcss }: Movie
           </div>
         </div>}
       
-        <div className={`grid ${gridcolcss} gap-16`}>
+        <div className={`grid grid-cols-1 sm:grid-cols-2 ${gridcolcss} gap-6 lg:gap-16`}>
           {movies.map((movie) => (
             <MovieCard key={movie.id} movie={movie} />
           ))}

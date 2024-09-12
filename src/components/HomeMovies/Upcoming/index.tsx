@@ -12,7 +12,7 @@ const Upcoming = () => {
 
   return (
     <div className='py-1'>
-    <Movies title='Upcoming YIFY Movies' urltitle="Request a Movie" url="/login" movies={movies} gridcolcss={"grid-cols-4"} />
+    <Movies title='Upcoming YIFY Movies' urltitle="Request a Movie" url="/login" movies={movies} gridcolcss={"md:grid-cols-4"} />
     </div>
   )
 }

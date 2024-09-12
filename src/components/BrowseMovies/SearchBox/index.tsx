@@ -25,9 +25,9 @@ export const SearchBox: React.FC<SearchBoxProps> = ({ onSearch }) => {
   };
 
   const handleDropdownChange = (fieldName: string, value: string) => {
-    console.log(fieldName, value)
+    // console.log(fieldName, value)
     setSearchProps(prevState => ({ ...prevState, [fieldName.toLowerCase()]: value }));
-    console.log(searchProps)
+    // console.log(searchProps)
   };
 
   const handleSearchClick = () => {

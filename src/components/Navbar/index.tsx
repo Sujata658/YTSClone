@@ -22,7 +22,7 @@ export default function Navbar() {
         orderby: ''
       }).then((movieData) => {
         setSearchedMovies(movieData.movies)
-        console.log(searchedMovies)
+        // console.log(searchedMovies)
       });
     }
   }, [query]);

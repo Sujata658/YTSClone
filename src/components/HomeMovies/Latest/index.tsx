@@ -13,7 +13,7 @@ export const Latest = () => {
   return (
     <div className='bg-bkgsec py-1'>
 
-      <Movies title='Latest YIFY Movies Torrents' urltitle='Browse All' url='/browse-movies' movies={movies} gridcolcss={'grid-cols-4'}/>
+      <Movies title='Latest YIFY Movies Torrents' urltitle='Browse All' url='/browse-movies' movies={movies} gridcolcss={'md:grid-cols-4'}/>
     </div>
   )
 }
